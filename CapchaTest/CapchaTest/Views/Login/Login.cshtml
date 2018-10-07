@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<div class="form-group row">
+    <form class="form-control">
+        <div class="form-group">
+            <input type="hidden" name="Code" id="Code" value="@ViewBag.Code" />
+            <label for="UserName" class="sr-only">Kullanıcı Adı</label>
+            <input type="text" id="UserName" class="form-control" placeholder="Kullanıcı Adı" required="" autofocus="">
+        </div>
+        <div class="form-group">
+            <label for="Password" class="sr-only">Şifre</label>
+            <input type="password" id="Password" class="form-control" placeholder="Şifre" required="">
+        </div>
+        <div class="form-group">
+            <label for="securetyCode" class="sr-only">@ViewBag.Code</label>
+            <input type="text" id="WriteCode" class="form-control" placeholder="Güvenlik Kodu" required="" autofocus="">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-lg btn-primary btn-block" onclick="Test()" id="btnLogin">Giriş</button>
+        </div>
+        <script>
+            var Code = document.getElementById("Code").value;
+            var UserName = $("#UserName").value();
+            var Password = document.getElementById("Password").value;
+            var WriteCode = document.getElementById("WriteCode").value;
+            var name = "coderen";
+            var pass = "12345";
+            function Test() {
+                debugger;
+                if (UserName === name && pass === Password && Code === WriteCode) {
+                    alert("Hoşgeldin EREN");
+                }
+                else {
+                    alert("Eksik Veya Yanlış Tuşlama Yaptınız");
+                }
+            };
+        </script>
+    </form>
+</div>
+
+
+
+
+
+
+
